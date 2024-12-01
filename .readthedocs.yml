@@ -1,44 +1,23 @@
-# MkDocs configuration file for GDPS Docs
+# .readthedocs.yml
 
-# Required: Site name (this is necessary for MkDocs)
-site_name: GDPS Docs
+# The version of the configuration file format (Read the Docs version 2)
+version: 2
 
-# Navigation structure for your docs
-nav:
-  - Home: index.md
-  - The Basics:
-      - Overview: thebasics/index.md
-      - GDPS Creation:
-          - Introduction: thebasics/gdpscreation/creation.md
-          - Steps to Create a GDPS: thebasics/gdpscreation/steps.md
-  - Advanced Topics:
-      - API Reference: advanced/api_reference.md
-      - Tutorials:
-          - Beginner Tutorial: advanced/tutorials/beginner.md
-          - Advanced Tutorial: advanced/tutorials/advanced.md
+# The name of the MkDocs configuration file
+mkdocs:
+  configuration: mkdocs.yml  # This links to your mkdocs.yml file
 
-# Specify theme (use Material theme for a modern look)
-theme:
-  name: material  # You can choose any theme that is supported by MkDocs
+# Python requirements file location
+python:
+  install:
+    - requirements: docs/requirements.txt  # Path to your requirements.txt file
 
-# Optional: Add plugins like search or diagram support
-plugins:
-  - search  # Enable search functionality
+# Build settings
+build:
+  os: ubuntu-22.04  # You can change this to another version if needed
+  tools:
+    python: "3.12"  # Python version to use for building docs
 
-# Markdown extensions to support math rendering
-markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
+# Optional: You can specify any extra configurations here if needed
 
-# External JavaScript for MathJax to render math equations
-extra_javascript:
-  - javascripts/mathjax.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-
-# Optional: Set paths for documentation (e.g., include requirements)
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/your-repo/GDPS-Docs  # Replace with your GitHub repository URL
-    - icon: fontawesome/brands/discord
-      link: https://discord.gg/your-discord-link  # Replace with your Discord link
+# Read the Docs configuration
