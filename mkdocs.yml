@@ -19,14 +19,74 @@ nav:
 
 # Specify theme (use Material theme for a modern look)
 theme:
-  name: material  # You can choose any theme that is supported by MkDocs
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - content.code.copy
+    - navigation.tabs
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.share
+    - toc.integrate
+    - toc.follow
+    - toc.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.next
+    - navigation.previous
+    - navigation.sidebar
 
 # Optional: Add plugins like search or diagram support
 plugins:
   - search  # Enable search functionality
+  - i18n:
+      docs_structure: folder
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: fr
+          name: Français
+          nav_translations:
+            Introduction: Accueil
+            GDPS Creation: Création de GDPS
+            # Add other translation mappings here as needed
+        - locale: es
+          name: Español
+          nav_translations:
+            Introduction: Introducción
+            GDPS Creation: Creación de GDPS
+            # Add other translation mappings here as needed
 
-# Markdown extensions to support math rendering
+# Markdown extensions to support math rendering, syntax highlighting, and other enhancements
 markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: true
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      auto_title: true
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.details
+  - pymdownx.emoji
   - pymdownx.arithmatex:
       generic: true
 
@@ -42,3 +102,7 @@ extra:
       link: https://github.com/your-repo/GDPS-Docs  # Replace with your GitHub repository URL
     - icon: fontawesome/brands/discord
       link: https://discord.gg/your-discord-link  # Replace with your Discord link
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/your-twitter-handle  # Replace with your Twitter link
+    - icon: fontawesome/brands/reddit
+      link: https://reddit.com/r/your-reddit-handle  # Replace with your Reddit link
