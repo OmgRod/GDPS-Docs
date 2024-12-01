@@ -25,10 +25,12 @@ theme:
 plugins:
   - search  # Enable search functionality
 
+# Markdown extensions to support math rendering
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
+# External JavaScript for MathJax to render math equations
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
