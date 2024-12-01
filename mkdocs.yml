@@ -1,0 +1,42 @@
+# MkDocs configuration file for GDPS Docs
+
+# Required: Site name (this is necessary for MkDocs)
+site_name: GDPS Docs
+
+# Navigation structure for your docs
+nav:
+  - Home: index.md
+  - The Basics:
+      - Overview: thebasics/index.md
+      - GDPS Creation:
+          - Introduction: thebasics/gdpscreation/creation.md
+          - Steps to Create a GDPS: thebasics/gdpscreation/steps.md
+  - Advanced Topics:
+      - API Reference: advanced/api_reference.md
+      - Tutorials:
+          - Beginner Tutorial: advanced/tutorials/beginner.md
+          - Advanced Tutorial: advanced/tutorials/advanced.md
+
+# Specify theme (use Material theme for a modern look)
+theme:
+  name: material  # You can choose any theme that is supported by MkDocs
+
+# Optional: Add plugins like search or diagram support
+plugins:
+  - search  # Enable search functionality
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+# Optional: Set paths for documentation (e.g., include requirements)
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-repo/GDPS-Docs  # Replace with your GitHub repository URL
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/your-discord-link  # Replace with your Discord link
